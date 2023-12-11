@@ -1,0 +1,151 @@
+@import "~sanitize.css/sanitize.css";
+@import "~sanitize.css/assets.css";
+
+@import "./fonts";
+@import "./keyframes";
+
+$link-color: #453886;
+$component-color: #767676;
+
+body {
+  background-color: #fff;
+  color: #666;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+h1 {
+  color: #222;
+  font-size: 1.875rem;
+  font-weight: 700;
+}
+
+a {
+  color: $link-color;
+  text-decoration: none;
+  transition: all 0.15s;
+
+  &:hover {
+    color: lighten($link-color, 15%);
+  }
+}
+
+.layout {
+  margin-top: 125px;
+}
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+
+  @media (min-width: 576px) {
+    max-width: 540px;
+  }
+}
+
+.profile {
+  animation: 0.6s 0.3s both fadeInDown;
+  text-align: center;
+}
+
+.profile-avatar {
+  margin-bottom: 25px;
+
+  img {
+    width: 125px;
+    height: 125px;
+    border-radius: 100%;
+    transition: all 0.2s;
+  }
+
+  img:hover {
+    box-shadow: 0 0 4px 0 rgb(0 0 0 / 18%), 0 0 12px 0 rgb(0 0 0 / 15%);
+    opacity: 0.8;
+  }
+}
+
+.profile-name {
+  margin: 0 0 13px;
+  font-size: 2.4rem;
+}
+
+.profile-bio {
+  margin: 0 0 30px;
+  color: $component-color;
+  font-size: 1.1875rem;
+  font-weight: 300;
+}
+
+.profile-socials {
+  min-height: 40px;
+}
+
+.profile-icon {
+  display: inline-block;
+  padding: 6px;
+
+  &:hover svg {
+    width: 23px;
+    height: 23px;
+    fill: indigo;
+  }
+
+  svg {
+    width: 22px;
+    height: 22px;
+    fill: #000;
+  }
+}
+
+.footer {
+  position: relative;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  border-top: 1px solid #ededed;
+  margin-top: 40px;
+  color: $component-color;
+  font-size: 0.8rem;
+  font-weight: 300;
+  text-align: center;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    display: block;
+    width: 7px;
+    height: 7px;
+    border: 1px solid #ededed;
+    border-radius: 3px;
+    background-color: #fff;
+    box-shadow: 0 0 0 5px #fff;
+    content: "";
+    transform: translate(-50%, -50%);
+  }
+}
+
+.footer-heart {
+  margin-right: 4px;
+  margin-left: 4px;
+  animation: 0.35s alternate infinite pulse;
+  fill: #fa3e3e !important;
+}
+
+.footer-author {
+  padding-bottom: 3px;
+  border-bottom: 1px solid $link-color;
+
+  &:active {
+    padding-bottom: 1px;
+  }
+
+  &:hover {
+    border-color: lighten($link-color, 15%);
+  }
+}
